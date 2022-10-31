@@ -1,4 +1,4 @@
-package de.htwBerlin.webtech.api;
+package de.htwBerlin.webtech.web.api;
 
 import java.time.LocalDate;
 

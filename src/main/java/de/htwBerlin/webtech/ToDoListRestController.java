@@ -1,6 +1,6 @@
 package de.htwBerlin.webtech;
 
-import de.htwBerlin.webtech.api.ToDoList;
+import de.htwBerlin.webtech.web.api.ToDoList;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
