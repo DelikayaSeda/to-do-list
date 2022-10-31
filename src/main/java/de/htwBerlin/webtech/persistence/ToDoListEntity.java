@@ -6,6 +6,7 @@ import java.time.LocalDate;
 @Entity(name = "ToDos")
 public class ToDoListEntity {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
