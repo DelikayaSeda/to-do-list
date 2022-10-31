@@ -70,4 +70,5 @@ public class ToDoListEntity {
     public void setFaelligkeitsdatum(LocalDate faelligkeitsdatum) {
         this.faelligkeitsdatum = faelligkeitsdatum;
     }
+
 }

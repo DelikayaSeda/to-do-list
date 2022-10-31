@@ -10,6 +10,7 @@ public class ToDoList {
     private boolean done;
     private LocalDate faelligkeitsdatum;
 
+
     public ToDoList(long id, String ordnerName, String aufgabenName, boolean done, LocalDate faelligkeitsdatum) {
         this.id = id;
         this.ordnerName = ordnerName;
