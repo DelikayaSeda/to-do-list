@@ -1,42 +1,20 @@
-package de.htwBerlin.webtech.persistence;
+package de.htwBerlin.webtech.web.api;
 
-import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity(name = "ToDos")
-public class ToDoListEntity {
+public class ToDoListCreateRequest {
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private long id;
-    @Column(name = "ordnerName", nullable = false)
     private String ordnerName;
-
-    @Column(name = "aufgabenName", nullable = false)
     private String aufgabenName;
-
-    @Column(name = "done")
     private boolean done;
-
-    @Column(name = "faelligkeitsdatum")
     private LocalDate faelligkeitsdatum;
 
-    public ToDoListEntity(String ordnerName, String aufgabenName, boolean done, LocalDate faelligkeitsdatum) {
+    public ToDoListCreateRequest(String ordnerName, String aufgabenName, boolean done, LocalDate faelligkeitsdatum) {
         this.ordnerName = ordnerName;
         this.aufgabenName = aufgabenName;
         this.done = done;
         this.faelligkeitsdatum = faelligkeitsdatum;
     }
-
-    public ToDoListEntity() {
-    }
-
-    public long getId() {
-        return id;
-    }
-
 
     public String getOrdnerName() {
         return ordnerName;
@@ -69,5 +47,4 @@ public class ToDoListEntity {
     public void setFaelligkeitsdatum(LocalDate faelligkeitsdatum) {
         this.faelligkeitsdatum = faelligkeitsdatum;
     }
-
 }
