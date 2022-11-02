@@ -2,14 +2,14 @@ package de.htwBerlin.webtech.web.api;
 
 import java.time.LocalDate;
 
-public class ToDoListCreateRequest {
+public class ToDoListManipulationRequest {
 
     private String ordnerName;
     private String aufgabenName;
     private boolean done;
     private LocalDate faelligkeitsdatum;
 
-    public ToDoListCreateRequest(String ordnerName, String aufgabenName, boolean done, LocalDate faelligkeitsdatum) {
+    public ToDoListManipulationRequest(String ordnerName, String aufgabenName, boolean done, LocalDate faelligkeitsdatum) {
         this.ordnerName = ordnerName;
         this.aufgabenName = aufgabenName;
         this.done = done;
