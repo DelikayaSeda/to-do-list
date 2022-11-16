@@ -39,8 +39,7 @@ public class ToDoListRestController {
        return ResponseEntity.created(uri).build();
     }
 
-    //TODO The Methide update
-    //TODO the Class ToDoLostManipulationRequest
+
    @PutMapping(path = "/api/v1/todolist/{id}")
    public ResponseEntity<ToDoList> updateToDoList(@PathVariable Long id, @RequestBody ToDoListManipulationRequest request) {
       var toDoList= toDoListService.update(id, request);
