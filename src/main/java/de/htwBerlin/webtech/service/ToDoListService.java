@@ -26,22 +26,17 @@ public class ToDoListService {
 
     }
 
-    //Liste wird per ID gesucht
+
     public ToDoList findById(Long id){
         var toDoListEntity = toDoListRepository.findById(id);
-        //Es wird geguckt ib die Entity vorhanden ist
-        // ,wenn ja wird die Entity zurückgegeben
-        //wenn nein dann wird ein null zurückgegeben
         return toDoListEntity.map(this::transformEntity).orElse(null);
     }
 
     public ToDoList create(ToDoListManipulationRequest request) {
-        //Ohne Id, weil es automatisch generiert wird
         var toDoListEntity = new ToDoListEntity(request.getOrdnerName(),
                 request.getAufgabenName(),
                 request.isDone(),
                 request.getFaelligkeitsdatum());
-        //Speichert die ToDOListEntity zurück
         toDoListEntity = toDoListRepository.save(toDoListEntity);
         return transformEntity(toDoListEntity);
     }
@@ -53,10 +48,10 @@ public class ToDoListService {
         }
 
         var toDoListEntity = toDoListEntityOptional.get();
-                toDoListEntity.setOrdnerName(request.getOrdnerName());
-                toDoListEntity.setAufgabenName(request.getAufgabenName());
-                toDoListEntity.setDone(request.isDone());
-                toDoListEntity.setFaelligkeitsdatum(request.getFaelligkeitsdatum());
+        toDoListEntity.setOrdnerName(request.getOrdnerName());
+        toDoListEntity.setAufgabenName(request.getAufgabenName());
+        toDoListEntity.setDone(request.isDone());
+        toDoListEntity.setFaelligkeitsdatum(request.getFaelligkeitsdatum());
 
         //Speichert die ToDOListEntity zurück
         toDoListEntity = toDoListRepository.save(toDoListEntity);
@@ -80,6 +75,6 @@ public class ToDoListService {
                 toDoListEntity.isDone(),
                 toDoListEntity.getFaelligkeitsdatum());
 
+    }
 
-}
 }

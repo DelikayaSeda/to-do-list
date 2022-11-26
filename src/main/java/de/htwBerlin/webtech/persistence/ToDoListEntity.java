@@ -1,8 +1,8 @@
 package de.htwBerlin.webtech.persistence;
 
+
 import javax.persistence.*;
 import java.time.LocalDate;
-
 @Entity(name = "ToDos")
 public class ToDoListEntity {
 
@@ -69,5 +69,4 @@ public class ToDoListEntity {
     public void setFaelligkeitsdatum(LocalDate faelligkeitsdatum) {
         this.faelligkeitsdatum = faelligkeitsdatum;
     }
-
 }
