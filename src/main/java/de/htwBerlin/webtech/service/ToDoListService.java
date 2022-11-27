@@ -33,9 +33,9 @@ public class ToDoListService {
     }
 
     public ToDoList create(ToDoListManipulationRequest request) {
-        var toDoListEntity = new ToDoListEntity(request.getOrdnerName(),
-                request.getAufgabenName(),
-                request.isDone(),
+        var toDoListEntity = new ToDoListEntity(request.getTodoTitel(),
+                request.getBeschreibung(),
+                request.isStatus(),
                 request.getFaelligkeitsdatum());
         toDoListEntity = toDoListRepository.save(toDoListEntity);
         return transformEntity(toDoListEntity);
@@ -48,9 +48,9 @@ public class ToDoListService {
         }
 
         var toDoListEntity = toDoListEntityOptional.get();
-        toDoListEntity.setOrdnerName(request.getOrdnerName());
-        toDoListEntity.setAufgabenName(request.getAufgabenName());
-        toDoListEntity.setDone(request.isDone());
+        toDoListEntity.setTodoTitel(request.getTodoTitel());
+        toDoListEntity.setBeschreibung(request.getBeschreibung());
+        toDoListEntity.setStatus(request.isStatus());
         toDoListEntity.setFaelligkeitsdatum(request.getFaelligkeitsdatum());
 
         //Speichert die ToDOListEntity zurück
@@ -70,9 +70,9 @@ public class ToDoListService {
     private ToDoList transformEntity(ToDoListEntity toDoListEntity) {
         return new ToDoList(
                 toDoListEntity.getId(),
-                toDoListEntity.getOrdnerName(),
-                toDoListEntity.getAufgabenName(),
-                toDoListEntity.isDone(),
+                toDoListEntity.getTodoTitel(),
+                toDoListEntity.getBeschreibung(),
+                toDoListEntity.isStatus(),
                 toDoListEntity.getFaelligkeitsdatum());
 
     }

@@ -5,17 +5,17 @@ import java.time.LocalDate;
 public class ToDoList {
 
     private long id;
-    private String ordnerName;
-    private String aufgabenName;
-    private boolean done;
+    private String todoTitel;
+    private String beschreibung;
+    private boolean status;
     private LocalDate faelligkeitsdatum;
 
 
-    public ToDoList(long id, String ordnerName, String aufgabenName, boolean done, LocalDate faelligkeitsdatum) {
+    public ToDoList(long id, String todoTitel, String beschreibung, boolean status, LocalDate faelligkeitsdatum) {
         this.id = id;
-        this.ordnerName = ordnerName;
-        this.aufgabenName = aufgabenName;
-        this.done = done;
+        this.todoTitel = todoTitel;
+        this.beschreibung = beschreibung;
+        this.status = status;
         this.faelligkeitsdatum = faelligkeitsdatum;
     }
 
@@ -27,28 +27,28 @@ public class ToDoList {
         this.id = id;
     }
 
-    public String getOrdnerName() {
-        return ordnerName;
+    public String getTodoTitel() {
+        return todoTitel;
     }
 
-    public void setOrdnerName(String ordnerName) {
-        this.ordnerName = ordnerName;
+    public void setTodoTitel(String todoTitel) {
+        this.todoTitel = todoTitel;
     }
 
-    public String getAufgabenName() {
-        return aufgabenName;
+    public String getBeschreibung() {
+        return beschreibung;
     }
 
-    public void setAufgabenName(String aufgabenName) {
-        this.aufgabenName = aufgabenName;
+    public void setBeschreibung(String beschreibung) {
+        this.beschreibung = beschreibung;
     }
 
-    public boolean isDone() {
-        return done;
+    public boolean isStatus() {
+        return status;
     }
 
-    public void setDone(boolean done) {
-        this.done = done;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public LocalDate getFaelligkeitsdatum() {

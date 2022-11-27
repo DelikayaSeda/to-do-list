@@ -4,40 +4,43 @@ import java.time.LocalDate;
 
 public class ToDoListManipulationRequest {
 
-    private String ordnerName;
-    private String aufgabenName;
-    private boolean done;
+    private String todoTitel;
+    private String beschreibung;
+    private boolean status;
     private LocalDate faelligkeitsdatum;
 
-    public ToDoListManipulationRequest(String ordnerName, String aufgabenName, boolean done, LocalDate faelligkeitsdatum) {
-        this.ordnerName = ordnerName;
-        this.aufgabenName = aufgabenName;
-        this.done = done;
+    public ToDoListManipulationRequest(String todoTitel, String beschreibung, boolean status, LocalDate faelligkeitsdatum) {
+        this.todoTitel = todoTitel;
+        this.beschreibung = beschreibung;
+        this.status = status;
         this.faelligkeitsdatum = faelligkeitsdatum;
     }
 
-    public String getOrdnerName() {
-        return ordnerName;
+    public ToDoListManipulationRequest() {
     }
 
-    public void setOrdnerName(String ordnerName) {
-        this.ordnerName = ordnerName;
+    public String getTodoTitel() {
+        return todoTitel;
     }
 
-    public String getAufgabenName() {
-        return aufgabenName;
+    public void setTodoTitel(String todoTitel) {
+        this.todoTitel = todoTitel;
     }
 
-    public void setAufgabenName(String aufgabenName) {
-        this.aufgabenName = aufgabenName;
+    public String getBeschreibung() {
+        return beschreibung;
     }
 
-    public boolean isDone() {
-        return done;
+    public void setBeschreibung(String beschreibung) {
+        this.beschreibung = beschreibung;
     }
 
-    public void setDone(boolean done) {
-        this.done = done;
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public LocalDate getFaelligkeitsdatum() {

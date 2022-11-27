@@ -11,22 +11,22 @@ public class ToDoListEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-    @Column(name = "ordnerName", nullable = false)
-    private String ordnerName;
+    @Column(name = "todoTitel", nullable = false)
+    private String todoTitel;
 
-    @Column(name = "aufgabenName", nullable = false)
-    private String aufgabenName;
+    @Column(name = "beschreibung", nullable = false)
+    private String beschreibung;
 
-    @Column(name = "done")
-    private boolean done;
+    @Column(name = "status")
+    private boolean status;
 
     @Column(name = "faelligkeitsdatum")
     private LocalDate faelligkeitsdatum;
 
-    public ToDoListEntity(String ordnerName, String aufgabenName, boolean done, LocalDate faelligkeitsdatum) {
-        this.ordnerName = ordnerName;
-        this.aufgabenName = aufgabenName;
-        this.done = done;
+    public ToDoListEntity(String todoTitel, String beschreibung, boolean status, LocalDate faelligkeitsdatum) {
+        this.todoTitel = todoTitel;
+        this.beschreibung = beschreibung;
+        this.status = status;
         this.faelligkeitsdatum = faelligkeitsdatum;
     }
 
@@ -38,28 +38,28 @@ public class ToDoListEntity {
     }
 
 
-    public String getOrdnerName() {
-        return ordnerName;
+    public String getTodoTitel() {
+        return todoTitel;
     }
 
-    public void setOrdnerName(String ordnerName) {
-        this.ordnerName = ordnerName;
+    public void setTodoTitel(String ordnerName) {
+        this.todoTitel = ordnerName;
     }
 
-    public String getAufgabenName() {
-        return aufgabenName;
+    public String getBeschreibung() {
+        return beschreibung;
     }
 
-    public void setAufgabenName(String aufgabenName) {
-        this.aufgabenName = aufgabenName;
+    public void setBeschreibung(String aufgabenName) {
+        this.beschreibung = aufgabenName;
     }
 
-    public boolean isDone() {
-        return done;
+    public boolean isStatus() {
+        return status;
     }
 
-    public void setDone(boolean done) {
-        this.done = done;
+    public void setStatus(boolean done) {
+        this.status = done;
     }
 
     public LocalDate getFaelligkeitsdatum() {
