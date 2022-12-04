@@ -1,15 +1,16 @@
 package de.htwBerlin.webtech.web.api;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class ToDoListManipulationRequest {
 
     private String todoTitel;
     private String beschreibung;
     private boolean status;
-    private LocalDate faelligkeitsdatum;
+    private Date faelligkeitsdatum;
 
-    public ToDoListManipulationRequest(String todoTitel, String beschreibung, boolean status, LocalDate faelligkeitsdatum) {
+    public ToDoListManipulationRequest(String todoTitel, String beschreibung, boolean status, Date faelligkeitsdatum) {
         this.todoTitel = todoTitel;
         this.beschreibung = beschreibung;
         this.status = status;
@@ -43,11 +44,11 @@ public class ToDoListManipulationRequest {
         this.status = status;
     }
 
-    public LocalDate getFaelligkeitsdatum() {
+    public Date getFaelligkeitsdatum() {
         return faelligkeitsdatum;
     }
 
-    public void setFaelligkeitsdatum(LocalDate faelligkeitsdatum) {
+    public void setFaelligkeitsdatum(Date faelligkeitsdatum) {
         this.faelligkeitsdatum = faelligkeitsdatum;
     }
 }

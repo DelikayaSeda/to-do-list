@@ -1,8 +1,12 @@
 package de.htwBerlin.webtech.persistence;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
+
 @Entity(name = "ToDos")
 public class ToDoListEntity {
 
@@ -21,9 +25,9 @@ public class ToDoListEntity {
     private boolean status;
 
     @Column(name = "faelligkeitsdatum")
-    private LocalDate faelligkeitsdatum;
+    private Date faelligkeitsdatum;
 
-    public ToDoListEntity(String todoTitel, String beschreibung, boolean status, LocalDate faelligkeitsdatum) {
+    public ToDoListEntity(String todoTitel, String beschreibung, boolean status, Date faelligkeitsdatum) {
         this.todoTitel = todoTitel;
         this.beschreibung = beschreibung;
         this.status = status;
@@ -62,11 +66,11 @@ public class ToDoListEntity {
         this.status = done;
     }
 
-    public LocalDate getFaelligkeitsdatum() {
+    public Date getFaelligkeitsdatum() {
         return faelligkeitsdatum;
     }
 
-    public void setFaelligkeitsdatum(LocalDate faelligkeitsdatum) {
+    public void setFaelligkeitsdatum(Date faelligkeitsdatum) {
         this.faelligkeitsdatum = faelligkeitsdatum;
     }
 }
