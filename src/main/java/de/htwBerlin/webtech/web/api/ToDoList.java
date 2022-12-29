@@ -1,6 +1,5 @@
 package de.htwBerlin.webtech.web.api;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 public class ToDoList {
@@ -9,15 +8,15 @@ public class ToDoList {
     private String todoTitel;
     private String beschreibung;
     private boolean status;
-    private Date faelligkeitsdatum;
+    private Date datum;
 
 
-    public ToDoList(long id, String todoTitel, String beschreibung, boolean status, Date faelligkeitsdatum) {
+    public ToDoList(long id, String todoTitel, String beschreibung, boolean status, Date datum) {
         this.id = id;
         this.todoTitel = todoTitel;
         this.beschreibung = beschreibung;
         this.status = status;
-        this.faelligkeitsdatum = faelligkeitsdatum;
+        this.datum = datum;
     }
 
     public long getId() {
@@ -44,7 +43,7 @@ public class ToDoList {
         this.beschreibung = beschreibung;
     }
 
-    public boolean isStatus() {
+    public Boolean isStatus() {
         return status;
     }
 
@@ -52,11 +51,11 @@ public class ToDoList {
         this.status = status;
     }
 
-    public Date getFaelligkeitsdatum() {
-        return faelligkeitsdatum;
+    public Date getDatum() {
+        return datum;
     }
 
-    public void setFaelligkeitsdatum(Date faelligkeitsdatum) {
-        this.faelligkeitsdatum = faelligkeitsdatum;
+    public void setDatum(Date datum) {
+        this.datum = datum;
     }
 }

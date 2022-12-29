@@ -26,7 +26,6 @@ public class ToDoListService {
 
     }
 
-
     public ToDoList findById(Long id){
         var toDoListEntity = toDoListRepository.findById(id);
         return toDoListEntity.map(this::transformEntity).orElse(null);
@@ -36,7 +35,7 @@ public class ToDoListService {
         var toDoListEntity = new ToDoListEntity(request.getTodoTitel(),
                 request.getBeschreibung(),
                 request.isStatus(),
-                request.getFaelligkeitsdatum());
+                request.getDatum());
         toDoListEntity = toDoListRepository.save(toDoListEntity);
         return transformEntity(toDoListEntity);
     }
@@ -51,12 +50,12 @@ public class ToDoListService {
         toDoListEntity.setTodoTitel(request.getTodoTitel());
         toDoListEntity.setBeschreibung(request.getBeschreibung());
         toDoListEntity.setStatus(request.isStatus());
-        toDoListEntity.setFaelligkeitsdatum(request.getFaelligkeitsdatum());
+        toDoListEntity.setDatum(request.getDatum());
 
-        //Speichert die ToDOListEntity zurück
         toDoListEntity = toDoListRepository.save(toDoListEntity);
         return transformEntity(toDoListEntity);
     }
+
 
     public boolean deleteById(Long Id){
         if (!toDoListRepository.existsById(Id)){
@@ -67,13 +66,14 @@ public class ToDoListService {
         return true;
     }
 
-    private ToDoList transformEntity(ToDoListEntity toDoListEntity) {
+
+    public ToDoList transformEntity(ToDoListEntity toDoListEntity) {
         return new ToDoList(
                 toDoListEntity.getId(),
                 toDoListEntity.getTodoTitel(),
                 toDoListEntity.getBeschreibung(),
-                toDoListEntity.isStatus(),
-                toDoListEntity.getFaelligkeitsdatum());
+                toDoListEntity.getStatus(),
+                toDoListEntity.getDatum());
 
     }
 
