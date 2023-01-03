@@ -56,6 +56,24 @@ public class ToDoListService {
         return transformEntity(toDoListEntity);
     }
 
+    public ToDoList isDone(Long id, ToDoListManipulationRequest request){
+        var toDoListEntityOptional = toDoListRepository.findById(id);
+        if (toDoListEntityOptional.isEmpty()){
+            return null;
+        }
+
+        var toDoListEntity = toDoListEntityOptional.get();
+        if(toDoListEntityOptional.get().getStatus().equals(true)){
+            toDoListEntity.setStatus(request.isStatus());
+        }
+        else{
+            toDoListEntity.setStatus(!request.isStatus());
+        }
+
+        toDoListEntity = toDoListRepository.save(toDoListEntity);
+        return transformEntity(toDoListEntity);
+    }
+
 
     public boolean deleteById(Long Id){
         if (!toDoListRepository.existsById(Id)){

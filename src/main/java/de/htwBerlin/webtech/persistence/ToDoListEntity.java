@@ -12,10 +12,10 @@ public class ToDoListEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-    @Column(name = "todoTitel", nullable = false)
+    @Column(name = "todoTitel")
     private String todoTitel;
 
-    @Column(name = "beschreibung", nullable = false)
+    @Column(name = "beschreibung")
     private String beschreibung;
 
     @Column(name = "status")
