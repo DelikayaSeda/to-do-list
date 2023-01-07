@@ -84,6 +84,12 @@ public class ToDoListService {
         return true;
     }
 
+    public boolean deleteAll(){
+
+        toDoListRepository.deleteAll();
+        return true;
+    }
+
 
     public ToDoList transformEntity(ToDoListEntity toDoListEntity) {
         return new ToDoList(

@@ -4,7 +4,6 @@ import de.htwBerlin.webtech.ToDoListRestController;
 import de.htwBerlin.webtech.service.ToDoListService;
 import de.htwBerlin.webtech.web.api.ToDoList;
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,5 +94,6 @@ public class ToDoListRestControllerTest {
                 .andExpect(header().exists("Location"))
                 .andExpect(header().string("Location", Matchers.equalTo(("/api/v1/todolist/" + todo.getId()))));
     }
+
 
 }
