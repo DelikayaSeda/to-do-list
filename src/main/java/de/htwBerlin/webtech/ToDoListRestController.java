@@ -20,7 +20,7 @@ public class ToDoListRestController {
     }
 
 
-    @GetMapping(path = "/api/v1/todolist" )
+    @GetMapping(path = "/api/v1/todolist")
     public ResponseEntity<List<ToDoList>> fetchToDoList(){
        return ResponseEntity.ok(toDoListService.findAll());
     }
